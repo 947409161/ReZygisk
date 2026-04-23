@@ -5,12 +5,7 @@ CLEANUP_SCRIPT="/data/adb/service.d/.rezygisk.sh"
 DEBUG=@DEBUG@
 
 MODDIR=${0%/*}
-# Create cleanup script
-[ ! -f "$CLEANUP_SCRIPT" ] && {
-  mkdir -p "$(dirname $CLEANUP_SCRIPT)"
-  cp "$MODDIR/.rezygisk.sh" "$CLEANUP_SCRIPT"
-  chmod +x "$CLEANUP_SCRIPT"
-}
+
 if [ "$ZYGISK_ENABLED" ]; then
   sed -i "s|^description=|description=[❌ Disable Magisk's built-in Zygisk] |" "$MODDIR/module.prop"
 
