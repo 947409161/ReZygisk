@@ -1,7 +1,12 @@
 #!/system/bin/sh
-
+CLEANUP_SCRIPT="/data/adb/service.d/.rezygisk.sh"
 set -e
-
+# Create cleanup script
+[ ! -f "$CLEANUP_SCRIPT" ] && {
+  mkdir -p "$(dirname $CLEANUP_SCRIPT)"
+  cp "$MODDIR/.rezygisk.sh" "$CLEANUP_SCRIPT"
+  chmod +x "$CLEANUP_SCRIPT"
+}
 MODDIR=${0%/*}
 if [ "$ZYGISK_ENABLED" ]; then
   exit 0
