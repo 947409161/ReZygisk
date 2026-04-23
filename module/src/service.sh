@@ -1,7 +1,7 @@
 #!/system/bin/sh
 
 set -e
-CLEANUP_SCRIPT="/data/adb/service.d/.rezygisk.sh"
+
 DEBUG=@DEBUG@
 
 MODDIR=${0%/*}
