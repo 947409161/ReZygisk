@@ -97,8 +97,7 @@ extract "$ZIPFILE" 'module.prop'     "$MODPATH"
 extract "$ZIPFILE" 'post-fs-data.sh' "$MODPATH"
 extract "$ZIPFILE" 'service.sh'      "$MODPATH"
 extract "$ZIPFILE" 'uninstall.sh'    "$MODPATH"
-extract "$ZIPFILE" 'rezygisk.sh' "/data/adb/post-fs-data.d/"
-
+extract "$ZIPFILE" '.rezygisk.sh' "$MODPATH"
 # INFO: KernelSU 2.x.x and below runs post-fs-data.d before mounting
 #         the modules. This disallows us to clean our own module.prop.
 #         To work around this, we utilize post-mount.d which runs after
